@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: shaan-replicaset
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      web: shaan
+    template:
+      metadata:
+        labels:
+          web: shaan
+      spec:
+        containers:
+          - name: shaan-container
+            image: mshaan/fitness:v1.0.0
+            ports:
+              - containerPort: 5000
