@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shaan-pod
+spec:
+  containers:
+    - name: shaan-container
+      image: mshaan/fitness:v1.0.0
+      ports:
+        - containerPort: 5000
