@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shaan-multi-pod
+spec:
+  containers:
+    - name: fitness-container
+      image: mshaan/fitness:v1.0.0
+      ports:
+        - containerPort: 5000
+    
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
