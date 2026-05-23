@@ -13,10 +13,10 @@ spec:
     metadata:
       labels:
         app: web
-    specs:
+    spec:
       containers:
-        -name: shaan-container
-         image: mshaan/fitness:v1.0.0
+        - name: shaan-container
+          image: mshaan/fitness:v1.0.0
           ports:
-            -containerPort: 5000
+            - containerPort: 5000
       
