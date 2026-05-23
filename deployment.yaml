@@ -26,7 +26,7 @@ metadata:
   name: shaan-service
 spec:
   selector:
-    app:web
+    app: web
   ports:
     - protocol: TCP
       port: 5010
