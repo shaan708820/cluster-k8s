@@ -19,4 +19,17 @@ spec:
           image: mshaan/groww:v1.0.0
           ports:
             - containerPort: 5005
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: groww-service
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 5020
+      targetPort: 5005
+  type: NodePort
       
