@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shaan-deployment
+  labels:
+    first: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    specs:
+      containers:
+        -name: shaan-container
+         image: mshaan/fitness:v1.0.0
+          ports:
+            -containerPort: 5000
+      
