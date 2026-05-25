@@ -1,36 +1,47 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: shaan-deployment
+  namespace: shaan-ns
   labels:
     first: app
+
 spec:
   replicas: 2
+
   selector:
     matchLabels:
       app: web
+
   template:
     metadata:
       labels:
         app: web
+
     spec:
       containers:
         - name: shaan-container
           image: mshaan/fitness:v1.0.0
+
           ports:
             - containerPort: 5000
+
 ---
 apiVersion: v1
 kind: Service
+
 metadata:
   name: shaan-service
+  namespace: shaan-ns
+
 spec:
   selector:
     app: web
+
   ports:
     - protocol: TCP
       port: 5010
       targetPort: 5000
+
   type: ClusterIP
-    
-      
