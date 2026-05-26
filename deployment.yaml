@@ -26,6 +26,9 @@ spec:
 
           ports:
             - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: shaan-config
 
 ---
 apiVersion: v1
