@@ -29,6 +29,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: shaan-config
+            - secretRef:
+                name: shaan-secret
 
 ---
 apiVersion: v1
