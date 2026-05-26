@@ -33,18 +33,15 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-
 metadata:
   name: shaan-service
   namespace: shaan-ns
-
 spec:
+  type: NodePort      # Changed from ClusterIP
   selector:
     app: web
-
   ports:
     - protocol: TCP
       port: 5010
       targetPort: 5000
-
-  type: ClusterIP
+      nodePort: 30010 # Added this (must be between 30000-32767)
