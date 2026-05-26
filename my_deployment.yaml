@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: groww-deployment
+  namespace: shaan-ns
   labels:
     first: app
 spec:
@@ -19,11 +20,15 @@ spec:
           image: mshaan/groww:v1.0.0
           ports:
             - containerPort: 5005
+          envFrom:
+            - configMapRef:
+                name: groww-config
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: groww-service
+  namespace: shaan-ns
 spec:
   selector:
     app: web
@@ -33,4 +38,3 @@ spec:
       targetPort: 5005
       nodePort: 30080
   type: NodePort
-      
