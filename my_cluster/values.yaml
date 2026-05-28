@@ -1,0 +1,17 @@
+replicaCount: 2
+
+image:
+  repository: mshaan/groww
+  tag: "v1.0.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 5020
+  targetPort: 5005
+  nodePort: 30080
+
+config:
+  flaskEnv: "production"
+  flaskApp: "app.py"
+  appPort: "5005"
